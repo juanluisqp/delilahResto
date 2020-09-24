@@ -118,7 +118,7 @@ En caso contrario, la respuesta indicara que no se pudo modificar o actualizar e
 
   - **Eliminar un usuario. (verbo DELETE Ruta** */users/id* - Se Requiere permisos de administrador <br>
 Este endpoint permitira la eliminacion de usuarios 
-Para la eliminacion de un usuario se debera hacer la peticion e indicar a traves del url, el id del usuario que se quiere elimianr
+Para la eliminacion de un usuario se debera hacer la peticion e indicar a traves del url, el id del usuario que se quiere eliminar
 
 En caso de que el request sea exitoso la respuesta sera un mensaje informando que el usuario se ha eliminado exitosamente.
 En caso contrario, la respuesta indicara que no se pudo eliminar el usuario.
@@ -177,16 +177,62 @@ En caso contrario, la respuesta indicara que no se pudo eliminar el usuario.
   En caso de no poder realizar el request el mensaje sera que no se pudo obtener informacion.
   
   - Ordenes:
-      - **Informacion de ordenes. (verbo: GET) Ruta** */orders* <br>
+    - **Informacion de ordenes. (verbo: GET) Ruta** */orders* <br>
   Este endpoint permitira listar todas las pordenes que esten en la base de datos.
   
   
   En caso de que el request haya sido exitoso la respuesta sera un objeto JSON con toda la informacion referente a ordenes.
   En caso de no poder realizar el request el mensaje sera que no se pudo obtener informacion.
   
+   - **Informacion de ordenes por id. (verbo: GET) Ruta** */orders/id* - se requiere permisos de administrador <br>
+  Este endpoint permitira revisar toda la informacion ingresada referente a una orden especifica.
+  Se debera enviar el id de la orden a traves del URL del endpoint.
   
   
+  En caso de que el request haya sido exitoso la respuesta sera un objeto JSON con toda la informacion referente a la orden.
+  En caso de no poder realizar el request el mensaje sera que no se pudo obtener informacion.
   
+  - **Creacion de una orden. (verbo: POST) Ruta** */orders* - Se Requiere permisos de administrador <br>
+  Este endpoint permitira la creacion de una orden 
+  Se debera enviar la informacion **CON FORMATO ARRAY DE OBJETOS** de la siguiente manera:
+  
+  ```
+  [
+  {"payment_method_id": X (Integer)},
+  {"user_id": X (integer)}, 
+  {"product_id": x (integer)},
+  {"product_id": x (Integer)}
+  ]
+  ```
+  En el array enviado en el body, los dos primeros objetos perteneceran al metodo de pago y al usuario que esta generando la orden (en ese orden respectivamente), seguido de los productos que se desean ingresar a esa orden. En caso de querer agregar mas productos se debe hacer agregando mas objetos con la propiedad product_id y el valor del producto.
+  
+  
+  En caso de que el request haya sido exitoso la respuesta sera un mensaje indicando que la orden fue generada correctamente.
+  En caso de no poder realizar el request la respuesta tendra status code de 400 e indicara error a traves de la consola.
+  
+   - **modificacion de una orden. (verbo: PUT) Ruta** */orders/id* - Se Requiere permisos de administrador <br>
+  Este endpoint permitira la modificacion de una orden 
+  Se debera enviar la informacion en formato JSON de la siguiente manera:
+  
+  ```
+  {
+  "payment_method": x (integer),
+  "status_id": x (integer)
+  }
+  ```
+  Los id correspondientes para cada metodo de pago y estado de orden podran ser revisados a traves del gestor de base de datos.
+  
+  
+  En caso de que el request haya sido exitoso la respuesta sera un mensaje indicando quela orden fue modificada correctamente.
+  En caso de no poder realizar el request la respuesta sera que no se pudo modificar la orden.
+  
+   - **Eliminar una orden. (verbo DELETE Ruta** */orders/id* - Se Requiere permisos de administrador <br>
+Este endpoint permitira la eliminacion de una orden. 
+Para la eliminacion de una orden se debera hacer la peticion e indicar a traves del url el id de la orden que se quiere eliminar.
+
+En caso de que el request sea exitoso la respuesta sera un mensaje informando que la orden se ha eliminado exitosamente.
+En caso contrario, la respuesta indicara que no se pudo eliminar la orden.
+
   
   
   
