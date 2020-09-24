@@ -8,8 +8,6 @@ Tercer y ultimo proyecto del curso DWFS de Acamica
 - Esto es viñeta 1.
   - Viñeta 1.1 con sangria.
   - Viñeta N.
-  ```
-		
-		//bloque de codigo...
-		
-		```
+```
+//bloque de codigo...
+```
