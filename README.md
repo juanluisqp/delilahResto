@@ -232,8 +232,3 @@ Para la eliminacion de una orden se debera hacer la peticion e indicar a traves 
 
 En caso de que el request sea exitoso la respuesta sera un mensaje informando que la orden se ha eliminado exitosamente.
 En caso contrario, la respuesta indicara que no se pudo eliminar la orden.
-
-  
-  
-  
-  
