@@ -11,9 +11,12 @@ Tercer y ultimo proyecto del curso DWFS de Acamica. Este proyecto consiste en ha
 
 ## **Instrucciones:**
 1- El primer paso sera abrir el proyecto en nuestro IDE, abrir la terminal y ejecutar el comando 
-``` npm i```
+
+``` npm i
+
 o
-``` npm install```
+
+``` npm install
 Esto instalara las dependencias necesarias listadas en el archivo package.json para el correcto funcionamiento de la API.
 
 2- Seguidamente sera necesario importar nuestra base de datos (el archivo .sql) a nuestro gestor de bases de datos. Se recomienda nombrar la base de datos creada como:
