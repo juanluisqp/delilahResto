@@ -17,6 +17,7 @@ Tercer y ultimo proyecto del curso DWFS de Acamica. Este proyecto consiste en ha
 o
 
 `npm install`
+
 Esto instalara las dependencias necesarias listadas en el archivo package.json para el correcto funcionamiento de la API.
 
 2- Seguidamente sera necesario importar nuestra base de datos (el archivo .sql) a nuestro gestor de bases de datos. Se recomienda nombrar la base de datos creada como:
@@ -36,16 +37,24 @@ Verificar que la base de datos este corriendo sobre el puerto 3000.
 Esto hara que el servidor sea inicializado mostrando el mensaje "Bienvenido a delilah resto!". En este punto la API estara en funcionamiento para hacer peticiones.
 
 
+## **Peticiones:**
 
+Para realizar las peticiones se debera indicar el url del servidor local a traves de la ruta "http://localhost:3000" y a partir de alli usar la respectiva ruta para cada endpoint. 
 
-### Esto es un H3
-#### Esto es un H4
-*Esto es cursiva*
-- Esto es viñeta 1.
-  - Viñeta 1.1 con sangria.
-  - Viñeta N.
+Para realizar la mayoria de las peticiones se necesita tener un token. Este token sera proveido al usar el endpoint de login. Es un principio se puede logear como administrador usando el username: admin y contraseña: admin. Tambien sera proveido a los usuarios con rol de usuario.
+
+El token debera ser guardado y usado al hacer las peticiones HTTP en el apartado de Authorization e indicar que el valor se trata de un bearer Token.
+-Usuarios
+  - **Login. Ruta: */auth/login* **
+Este endpoint permitira el logeo de los usuarios registrados. Se debera enviar la informacion a la api en formato JSON de la siguiente manera:
 ```
-//bloque de codigo...
+{
+"username": "usuarioDeEjemplo",
+"password": "contraseñaFalsa123"
+}
 ```
-[texto a mostrar](#mi-titulo-a-anclar)
-*
+
+En caso de ser exitoso el request, la respuesta sera un objeto indicando el nombre de usuario y el token que debera ser utilizado en los endpoints que correspondan.
+En caso de haber error en usuario o contraseña, la respuesta sera un mensaje en formato JSON indicando que el usuario o la contraseña no coinciden con ningun valor de la base de datos.
+
+- *
