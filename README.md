@@ -45,7 +45,7 @@ Para realizar la mayoria de las peticiones se necesita tener un token. Este toke
 
 El token debera ser guardado y usado al hacer las peticiones HTTP en el apartado de Authorization e indicar que el valor se trata de un bearer Token.
 - **Usuarios**
-  - **Login. (verbo: POST) Ruta:** */auth/login* -  
+  - **Login. (verbo: POST) Ruta:** */auth/login*  
   
 Este endpoint permitira el logeo de los usuarios registrados. Se debera enviar la informacion a la api en formato JSON de la siguiente manera:
 ```
@@ -58,7 +58,7 @@ Este endpoint permitira el logeo de los usuarios registrados. Se debera enviar l
 En caso de ser exitoso el request, la respuesta sera un objeto indicando el nombre de usuario y el token que debera ser utilizado en los endpoints que correspondan.
 En caso de haber error en usuario o contraseña, la respuesta sera un mensaje en formato JSON indicando que el usuario o la contraseña no coinciden con ningun valor de la base de datos.
 
-  - **SignUp. (verbo: POST) Ruta** */users/signup*
+  - **SignUp. (verbo: POST) Ruta** */users/signup* <br>
 
 Este endpoint permitira el ingreso de nuevos usuarios.
 Para el ingreso de un usuario se debera ingresar la informacion en formato JSON de la siguiente manera:
